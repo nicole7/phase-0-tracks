@@ -17,3 +17,6 @@
    A good commit message has a unique ID, a message, an author and a timestamp
 
 4. A merge conflict is when two or more branches change the same thing in a file and then get merged
+
+
+***************************************************************************************************************
