@@ -28,6 +28,11 @@ while index < new_name.length
 		#new_name at this index will equal vowels at the index set above
 		#So cat, new_name at 1 is vowels at index 1 which is 'e'
 		new_name[index] = vowels[new_vowel]
+			#Edge cases, if new_name letter equals the last letter in the sequence of vowels string
+			if new_name = vowels.length - 1 
+				#Have new_name letter equal to the first index of the vowel string
+				new_name = vowels[0]
+			end
 
 	#Elif statement for consonants - does consonants include the value from new_name passed at that index
 	elsif consonants.include?(new_name[index])
@@ -35,7 +40,11 @@ while index < new_name.length
 		next_cons = consonants.index(new_name[index]).next
 		#change new_name at this index value to the next consonant 
 		new_name[index] = consonants[next_cons]
-
+			#Edge cases, if new_name letter equals the last letter in the sequence of consonants string
+			if new_name = consonants.length - 1 
+				#Have new_name letter equal to the first index of the consonants string
+				new_name = consonants[0]
+			end
 	#End if statement
 	end
 	#Iteration index = index + 1
