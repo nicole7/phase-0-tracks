@@ -83,24 +83,38 @@ extinct_animals.each {|key, value|
 # "Dodo"
 # "Saiga Antelope"
 # Driver code example: is_extinct?(extinct_animals, "Andean Cat")
-def is_extinct(hash, animal)
-	
-	extinct_animals.each do 
-		if extinct_animals.include? animal
-			p "True, #{animal} is extinct"
-		else 
-			p "False, #{anmial} is not extinct"
-		end
-	end
-end
-	is_extinct(extinct_animals, "Andean Cat")
-	is_extinct(extinct_animals, "Dodo")
-	is_extinct(extinct_animals, "Saiga Antelope")
 
+#Method called is_extinct? - pass in hash and string you want to check
+def is_extinct?(extinct_animals, string)
+	#For each hash item do pass the key of the hash through
+	extinct_animals.each do |key|
+		#If the hash has this key, the string you're passing,
+		if 	extinct_animals.has_key?(string)
+			#then print this with the string
+			p "True, #{string} is extinct"
+		#Otherwise,
+		else
+			#print this
+			p "False, #{string} is not extinct"
+		#End if statement
+		end
+		#And then get out of the loop
+		break
+	#End do loop
+	end
+#End method
+end
+
+#Call method with the arguments, hash and the string you want to check
+is_extinct?(extinct_animals, "Andean Cat")
+is_extinct?(extinct_animals, "Dodo")
+is_extinct?(extinct_animals, "Saiga Antelope")
 
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find a Ruby Hash built-in method that helps you accomplish this or build
 # your own method using #each
-extinct_animals.delete_if {|key, value| value == "Passenger Pigeon" } 
+
+#Print, delete if hash ---key passed through and tested to equal this string is included in the hash
+p extinct_animals.delete_if {|key| key == "Passenger Pigeon" } 
