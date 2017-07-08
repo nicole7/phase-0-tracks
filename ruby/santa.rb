@@ -1,4 +1,5 @@
 class Santa
+attr_accessor :age, :ethnicity, :reindeer_ranking, :gender
 
 	def initialize(gender, ethnicity)
 		@gender = gender
@@ -22,33 +23,33 @@ class Santa
 		p "Gender is #{@gender} and ethnicity is #{@ethnicity}"
 	end
 
-	#Getter
-	def age
-		@age
-	end
-	def ethnicity
-		@ethnicity
-	end
-	def reindeer_ranking
-		@reindeer_ranking
-	end
-	def gender
-		@gender
-	end
+#Getter
+	#def age
+		#@age
+	#end
+	#def ethnicity
+		#@ethnicity
+	#end
+	#def reindeer_ranking
+		#@reindeer_ranking
+	#end
+	#def gender
+		#@gender
+	#end
 
-	#Setter
-	def celebrate_birthday=(new_age)
-		@age = new_age
-	end
+#Setter
+	#def celebrate_birthday=(new_age)
+		#@age = new_age
+	#end
 
-	def get_mad_at(reindeer_name)
+	#def get_mad_at(reindeer_name)
 
-		@reindeer_ranking.delete(reindeer_name)
-		@reindeer_ranking.push(reindeer_name)
-	end
-	def gender=(new_gender)
-		@gender = new_gender
-	end
+		#@reindeer_ranking.delete(reindeer_name)
+		#@reindeer_ranking.push(reindeer_name)
+	#end
+	#def gender=(new_gender)
+		#@gender = new_gender
+	#end
 
 end
 
@@ -57,9 +58,12 @@ santa.speak
 santa.eat_milk_and_cookies("Snickerdoodle")
 santa.about
 
-p santa.get_mad_at("Dasher")
+santa.reindeer_ranking.delete("Dasher")
+santa.reindeer_ranking.push("Dasher")
+
+p santa.reindeer_ranking
 p santa.gender = "Non-conforming"
-santa.celebrate_birthday = "29"
+santa.age = "29"
 p "#{santa.age}"
 
 
