@@ -4,10 +4,10 @@ class Santa
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = 0
+		@age = 28
 		@years_attended = 0
 
-		p "Initializing Santa instance..."
+		#p "Initializing Santa instance..."
 	end
 
 	def speak
@@ -18,13 +18,53 @@ class Santa
 		p "That was a good #{cookies_type}!"
 	end
 
-	
+	def about
+		p "Gender is #{@gender} and ethnicity is #{@ethnicity}"
+	end
+
+	#Getter
+	def age
+		@age
+	end
+	def ethnicity
+		@ethnicity
+	end
+	def reindeer_ranking
+		@reindeer_ranking
+	end
+	def gender
+		@gender
+	end
+
+	#Setter
+	def celebrate_birthday=(new_age)
+		@age = new_age
+	end
+
+	def get_mad_at(reindeer_name)
+
+		@reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking.push(reindeer_name)
+	end
+	def gender=(new_gender)
+		@gender = new_gender
+	end
 
 end
 
-santa = Santa.new
+santa = Santa.new("female", "American")
 santa.speak
 santa.eat_milk_and_cookies("Snickerdoodle")
+santa.about
+
+p santa.get_mad_at("Dasher")
+p santa.gender = "Non-conforming"
+santa.celebrate_birthday = "29"
+p "#{santa.age}"
+
+
+
+
 
 #santas = []
 #santas << Santa.new("agender", "black")
@@ -43,8 +83,16 @@ example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
 
+#p santas
+
 santas2 = []
 example_ages = [3,15,35,43,65,7,28]
 example_years_attended = [5,1,2,2,3,5,1]
+
+example_ages.each do |i|
+	santas2 << Santa.new(example_ages[i], example_years_attended[i])
+end
+
+#p santas2
 
 
