@@ -83,5 +83,13 @@ end
  
 student_array.each {|item| puts item.test_scores("A")}
 
+student_array.each do
+ while student_array.length < 5
+ student_array << student = Student.new
+ test_scores("A+")
+ go_to_recess
+ end
+end
+
 
 
