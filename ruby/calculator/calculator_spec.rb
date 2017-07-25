@@ -10,6 +10,7 @@
 
 require_relative 'calculator'
 
+
 describe Calculator do
   let(:calculator) { Calculator.new }
 
@@ -24,4 +25,10 @@ describe Calculator do
   it "multiplies two integers" do
     expect(calculator.multiply(2,3)).to eq 6
   end
+
+
+  it "divides two integers" do
+    expect(calculator.divide(6,3)).to eq 2
+  end
+
 end

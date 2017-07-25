@@ -27,7 +27,7 @@ while index < new_name.length
 		next_vowel = vowels.index(new_name[index]).next
 		#new_name at this index will equal vowels at the index set above
 		#So cat, new_name at 1 is vowels at index 1 which is 'e'
-		new_name[index] = vowels[new_vowel]
+		new_name[index] = vowels[next_vowel]
 			#Edge cases, if new_name letter equals the last letter in the sequence of vowels string
 			if new_name = vowels.length - 1 
 				#Have new_name letter equal to the first index of the vowel string
