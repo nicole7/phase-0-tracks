@@ -34,8 +34,8 @@ end
 
 puts "How many employees are there?"
 emp_total = gets.to_i
-i = 1
 
+i = 1
 
 while i <= emp_total
 puts "What's the employee's name"
