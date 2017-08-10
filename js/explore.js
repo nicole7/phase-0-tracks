@@ -34,6 +34,3 @@ if (x+y == 5){
 else{
 	console.log("Does not equal 5");
 }
-
-
-
