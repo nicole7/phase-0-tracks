@@ -1,5 +1,6 @@
 # require gems
 require 'sinatra'
+require "sinatra/reloader" if development?
 require 'sqlite3'
 
 db = SQLite3::Database.new("students.db")
@@ -21,6 +22,13 @@ end
 
 get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
+end
+
+get '/search_input/student' do
+  "Please enter a name to search for"
+  search_input = gets.chomp
+  student = db.execute("SELECT * FROM students WHERE name=?", [params[:name]])[search_input]
+  student.to_s
 end
 
 # write a GET route that retrieves
@@ -49,6 +57,14 @@ get '/great_job/:person' do
   else
     "Good job!"
 end
+
+get '/num_1/num_2'
+  num_1 = 5
+  num_2 = 10
+  result = num_1 + num_2
+  "The result of #{num_1} and #{num_2} is #{result.to_s}"
+end
+
 # write a GET route that retrieves
 # a particular student
 
