@@ -37,6 +37,18 @@ get '/students' do
   response
 end
 
+get '/contact' do
+  contact = "1033 W Van Buren St, Chicago, IL 60607"
+  "#{contact}"
+end
+
+get '/great_job/:person' do
+  person = params[:name]
+  if great_job
+    "Good job!, #{person}!"
+  else
+    "Good job!"
+end
 # write a GET route that retrieves
 # a particular student
 
